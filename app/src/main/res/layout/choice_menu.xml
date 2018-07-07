@@ -1,0 +1,43 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+    <!-- Linha 2 com 3 colunas -->
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_height="49dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            android:gravity="center"
+            android:padding="15dip"
+            android:text="@string/categoria_mat_1"
+            android:textColor="@color/branco" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:text="@string/categoria_mat_2"
+            android:layout_height="49dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            android:textColor="@color/branco"
+            android:padding="15dip"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:text="@string/categoria_mat_3"
+            android:layout_height="49dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            android:textColor="@color/branco"
+            android:padding="0dip"
+            android:gravity="center"/>
+    </TableRow>
+</TableLayout>
