@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">Odisseia</string>
+    <string name="search_hint">CodMat</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="categoria_mat_1">ÚTEIS</string>
+    <string name="categoria_mat_2">FÁCEIS</string>
+    <string name="categoria_mat_3">RECOMENDADAS</string>
 </resources>
