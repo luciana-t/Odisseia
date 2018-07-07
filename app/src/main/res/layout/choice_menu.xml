@@ -1,46 +1,34 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:shrinkColumns="*"
-    android:stretchColumns="*">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <!-- Linha 2 com 3 colunas -->
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <Button android:id="@+id/btUTEIS"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:ignore="UselessParent">
+        android:layout_weight="2"
+        android:text="@string/categoria_mat_1"
+        android:textColor="@color/branco"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="top"/>
 
-        <TextView
-            android:id="@+id/TextView03"
-            android:layout_height="49dp"
-            android:layout_weight="1"
-            android:background="?attr/colorPrimary"
-            android:gravity="center"
-            android:padding="15dip"
-            android:text="@string/categoria_mat_1"
-            android:textColor="@color/branco" />
+    <Button android:id="@+id/btFACEIS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/categoria_mat_2"
+        android:textColor="@color/branco"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="top"/>
+    
+    <Button android:id="@+id/btRECOMENDADAS"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:text="@string/categoria_mat_3"
+        android:textColor="@color/branco"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="top"/>
 
-        <TextView
-            android:id="@+id/TextView04"
-            android:layout_height="49dp"
-            android:layout_weight="1"
-            android:background="?attr/colorPrimary"
-            android:gravity="center"
-            android:padding="15dip"
-            android:text="@string/categoria_mat_2"
-            android:textColor="@color/branco" />
-
-        <TextView
-            android:id="@+id/TextView05"
-            android:layout_height="49dp"
-            android:layout_weight="1"
-            android:background="?attr/colorPrimary"
-            android:gravity="center"
-            android:padding="0dip"
-            android:text="@string/categoria_mat_3"
-            android:textColor="@color/branco" />
-    </TableRow>
-</TableLayout>
+</LinearLayout>
