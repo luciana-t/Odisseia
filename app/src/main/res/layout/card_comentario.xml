@@ -44,14 +44,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_up"
-                    android:onClick="voteUp"/>
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:elevation="0dp"
+                    android:onClick="voteUp"
+                    android:src="@drawable/ic_up" />
 
                 <ImageButton
                     android:id="@+id/downCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/cardview_light_background"
                     android:src="@drawable/ic_down"
                     android:onClick="voteDown"/>
 
