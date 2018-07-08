@@ -15,22 +15,40 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DatabaseHelper myDb;
-    EditText edit_Name;
+    EditText edit_Materia;
+    EditText edit_Professor;
+    EditText edit_Status;
+    EditText edit_Ponto;
+    EditText edit_Util;
+    EditText edit_Facil;
+    EditText edit_Recom;
+    EditText edit_Coment;
     Button addbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         myDb = new DatabaseHelper(this);
 
-        edit_Name = (EditText)findViewById(R.id.editText);
+        edit_Materia = (EditText)findViewById(R.id.editMateria);
+        /*
+        edit_Professor = (EditText)findViewById(R.id.editProfessor);
+        edit_Status = (EditText)findViewById(R.id.editStatus);
+        edit_Ponto = (EditText)findViewById(R.id.editPonto);
+        edit_Util = (EditText)findViewById(R.id.editUtil);
+        edit_Facil = (EditText)findViewById(R.id.editFacil);
+        edit_Recom = (EditText)findViewById(R.id.editRecom);
+        edit_Coment = (EditText)findViewById(R.id.editComent);
+        */
         addbutton = (Button)findViewById(R.id.add_button);
         AddData();
 
@@ -51,20 +69,66 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
     public void AddData(){
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
+                Usuario usuario = new Usuario();
+                usuario.nome = "Lulu";
+                usuario.curso = "CCP";
+                usuario.data_admissao = "01/03/2015";
+                usuario.data_cadastro = "08/07/2018";
 
-                boolean isInserted = myDb.insertData(edit_Name.getText().toString());
+                long id_usuario = myDb.saveUsuario(usuario);
+
+                Disciplina disciplina = new Disciplina();
+                disciplina.cod_disciplina = "INF123";
+                disciplina.nome = "Xablau";
+                disciplina.facilidade = 5;
+                disciplina.utilidade = 29;
+                disciplina.recomendacao = 23;
+                disciplina.estrelas = 5;
+
+                long id_disciplina = myDb.saveDisciplina(disciplina);
+
+                Avaliacao avaliacao = new Avaliacao();
+                avaliacao.id_usuario = (int)id_usuario;
+                avaliacao.id_disciplina = (int)id_disciplina;
+                avaliacao.estrelas = 5;
+                avaliacao.facilidade = true;
+                avaliacao.utilidade = false;
+                avaliacao.recomenda = true;
+                avaliacao.comentario = "xablau";
+                avaliacao.anonima = false;
+                avaliacao.professor = "Nenell";
+                avaliacao.visivel = true;
+                avaliacao.validade = 123;
+
+                long id_avaliacao = myDb.saveAvaliacao(avaliacao);
+
+                Reacao reacao = new Reacao();
+                reacao.id_usuario = (int)id_usuario;
+                reacao.id_avaliacao = (int)id_avaliacao;
+                reacao.conteudo = true;
+                reacao.data = "08/07/2018";
+
+                myDb.saveReacao(reacao);
+                */
+
+
+/*
+                boolean isInserted = myDb.insertData(edit_Materia.getText().toString(),
+                        edit_Professor.getText().toString(), edit_Status.getText().toString(),
+                        edit_Ponto.getText().toString(), edit_Util.getText().toString(),
+                        edit_Facil.getText().toString(), edit_Recom.getText().toString(),
+                        edit_Coment.getText().toString());
                 if (isInserted == true)
                     Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
                 else
-                    Toast.makeText(MainActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();*/
             }
         });
     }
