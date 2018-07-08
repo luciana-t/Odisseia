@@ -7,17 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".avaliarDisciplina">
 
-    <TextView
-        android:id="@+id/infoMateriaCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="COD### - NOME MATÉRIA"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        android:gravity="center"
-        android:background="@color/cinza"/>
     <LinearLayout
+        android:layout_marginVertical="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/infoMateriaCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COD### - NOME MATÉRIA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:gravity="center"
+            android:background="@color/cinza"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -25,7 +33,7 @@
 
         <TextView
             android:id="@+id/txtAvaliar"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -120,28 +128,3 @@
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
-
-<!--
-<LinearLayout
-            android:id="@+id/linha2Card"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/notaCard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/notaCard"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:typeface="normal"/>
-
-            <ImageView
-                android:id="@+id/starCard"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_star"/>
-        </LinearLayout>
--->
