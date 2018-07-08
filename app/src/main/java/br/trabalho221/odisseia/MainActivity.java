@@ -12,9 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    DatabaseHelper myDb;
+    EditText edit_Name;
+    Button addbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        myDb = new DatabaseHelper(this);
+
+        edit_Name = (EditText)findViewById(R.id.editText);
+        addbutton = (Button)findViewById(R.id.add_button);
+        AddData();
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +53,20 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+    }
+
+    public void AddData(){
+        addbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                boolean isInserted = myDb.insertData(edit_Name.getText().toString());
+                if (isInserted == true)
+                    Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(MainActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
