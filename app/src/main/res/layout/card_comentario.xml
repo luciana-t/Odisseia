@@ -29,20 +29,51 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/txtcomentCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_weight="8"
-                    android:layout_gravity="center_vertical"
-                    android:text="Um texto longo reclamando da vida e desse trabalho gigante que não acaba nunca"
-                    android:textSize="14sp"
-                    android:typeface="normal"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtcomentCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:layout_gravity="center_vertical"
+                        android:text="Um texto longo reclamando da vida e desse trabalho gigante que não acaba nunca"
+                        android:textSize="14sp"
+                        android:typeface="normal"/>
+
+                    <LinearLayout
+                        android:id="@+id/linha2Card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/notaCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/notaCard"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:layout_marginTop="5dp"/>
+
+                        <ImageView
+                            android:id="@+id/starCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_star"/>
+                    </LinearLayout>
+                </LinearLayout>
+
 
                 <ImageButton
                     android:id="@+id/upCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="@android:color/transparent"
                     android:elevation="0dp"
@@ -51,8 +82,8 @@
 
                 <ImageButton
                     android:id="@+id/downCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="@android:color/transparent"
                     android:src="@drawable/ic_down"
