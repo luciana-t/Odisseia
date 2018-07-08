@@ -7,22 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".avaliarDisciplina">
 
+    <TextView
+        android:id="@+id/infoMateriaCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COD### - NOME MATÉRIA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:gravity="center"
+        android:background="@color/cinza"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/infoMateriaCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="COD### - NOME MATÉRIA"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            android:gravity="center"
-            android:background="@color/cinza"/>
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/txtAvaliar"
