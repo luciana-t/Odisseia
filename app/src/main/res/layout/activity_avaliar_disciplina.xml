@@ -97,8 +97,31 @@
 
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+            android:id="@+id/lblProf"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="PROFESSOR:"/>
+
+            <EditText
+                android:id="@+id/txtProf"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="nome professor"/>
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/txtComent"
+            android:id="@+id/lblComent"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,7 +129,7 @@
             android:text="COMENTE SOBRE A MATÉRIA:"/>
 
         <EditText
-            android:id="@+id/cepCadastEnd"
+            android:id="@+id/txtComent"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:hint="ex.: O que você achou do professor, do material, da carga horário? A disciplina atendeu suas expectativas?"
