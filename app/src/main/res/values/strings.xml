@@ -10,4 +10,5 @@
     <string name="categoria_mat_1">ÚTEIS</string>
     <string name="categoria_mat_2">FÁCEIS</string>
     <string name="categoria_mat_3">RECOMENDADAS</string>
+    <string name="notaCard">5.0</string>
 </resources>

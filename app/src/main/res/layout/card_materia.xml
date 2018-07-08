@@ -34,7 +34,7 @@
                     android:id="@+id/notaCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="<5.0>"
+                    android:text="@string/notaCard"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:typeface="normal"/>
