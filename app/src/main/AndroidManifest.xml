@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".avaliarDisciplina" />
-        <activity android:name=".pagComentDisciplinas"></activity>
+        <activity android:name=".Splash"></activity>
     </application>
 
 </manifest>

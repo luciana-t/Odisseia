@@ -33,9 +33,11 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_down" />
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="C:\Users\e-car\Documents\INF221 - Engenharia de Software\TP Grupo\bg.png" />
+                                      <entry key="outputName" value="ic_bg" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="323232" />
+                                      <entry key="themeColor" value="170032" />
                                     </map>
                                   </option>
                                 </PersistentState>
