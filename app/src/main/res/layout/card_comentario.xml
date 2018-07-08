@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardComent"
@@ -44,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/cardview_light_background"
+                    android:backgroundTint="@android:color/transparent"
                     android:elevation="0dp"
                     android:onClick="voteUp"
                     android:src="@drawable/ic_up" />
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/cardview_light_background"
+                    android:backgroundTint="@android:color/transparent"
                     android:src="@drawable/ic_down"
                     android:onClick="voteDown"/>
 

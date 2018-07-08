@@ -1,3 +1,8 @@
+/*package br.trabalho221.odisseia;
+
+public class MySubjectAdapter {
+}
+*/
 package br.trabalho221.odisseia;
 
 import android.content.Context;
@@ -12,50 +17,50 @@ import android.widget.TextView;
 import java.util.List;
 
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MySubjectAdapter extends RecyclerView.Adapter<MySubjectAdapter.ViewHolder> {
 
-    private List<ListItem> listItems;
+    private List<ListSubject> listSubjects;
     private Context context;
 
-    public MyAdapter(List<ListItem> listItems, Context context) {
-        this.listItems = listItems;
+    public MySubjectAdapter(List<ListSubject> listSubjects, Context context) {
+        this.listSubjects = listSubjects;
         this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_comentario, parent, false);
+                .inflate(R.layout.card_materia, parent, false);
         return new ViewHolder(v);
 
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ListItem listItem = listItems.get(position);
+        ListSubject listSubject = listSubjects.get(position);
         if(position%2!=0){
             holder.card.setBackgroundResource(R.color.cinzaClaro);
         }
 
-        holder.infoComentCard.setText(listItem.getNomeDisciplina());
-        holder.txtcomentCard.setText(listItem.getComentario());
+        holder.infoMateriaCard.setText(listSubject.getMateria());
+        holder.notaCard.setText(listSubject.getNota());
     }
 
     @Override
     public int getItemCount() {
-        return listItems.size();
+        return listSubjects.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView infoComentCard;
-        public TextView txtcomentCard;
+        public TextView infoMateriaCard;
+        public TextView notaCard;
         public CardView card;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            card = itemView.findViewById(R.id.cardComent);
-            infoComentCard = (TextView) itemView.findViewById(R.id.infoComentCard);
-            txtcomentCard =(TextView)itemView.findViewById(R.id.txtcomentCard);
-         }
+            card = itemView.findViewById(R.id.cardMateria);
+            infoMateriaCard = (TextView) itemView.findViewById(R.id.infoMateriaCard);
+            notaCard =(TextView)itemView.findViewById(R.id.notaCard);
+        }
     }
 }
