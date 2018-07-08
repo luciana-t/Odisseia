@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".avaliarDisciplina" />
+        <activity android:name=".AvaliarDisciplina" />
         <activity android:name=".Splash"></activity>
         <activity android:name=".pagComentDisciplinas"></activity>
     </application>

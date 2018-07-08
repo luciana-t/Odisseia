@@ -8,11 +8,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v4.content.res.ResourcesCompat;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    private static DatabaseHelper instance;
 
     public static final String DATABASE_NAME = "odissey.db";
 
-    public DatabaseHelper(Context context) {
+    private DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
+    }
+
+    public static synchronized DatabaseHelper getInstance(Context context) {
+        if (instance == null)
+            instance = new DatabaseHelper(context.getApplicationContext());
+
+        return instance;
     }
 
     @Override
