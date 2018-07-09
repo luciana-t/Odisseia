@@ -2,6 +2,7 @@ package br.trabalho221.odisseia;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -16,6 +17,9 @@ public class AvaliarDisciplina extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avaliar_disciplina);
+        setTitle("AVALIAR DISCIPLINA");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btnSubmeter = (Button) findViewById(R.id.btnSubmeter);
         btnSubmeter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,4 +39,14 @@ public class AvaliarDisciplina extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
