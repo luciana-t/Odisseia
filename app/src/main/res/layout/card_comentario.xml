@@ -69,25 +69,31 @@
                     </LinearLayout>
                 </LinearLayout>
 
-
-                <ImageButton
-                    android:id="@+id/upCard"
+                <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    android:elevation="0dp"
-                    android:onClick="voteUp"
-                    android:src="@drawable/ic_up" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_gravity="bottom">
+                    <ImageButton
+                        android:id="@+id/upCard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        android:elevation="0dp"
+                        android:onClick="voteUp"
+                        android:src="@drawable/ic_up" />
 
-                <ImageButton
-                    android:id="@+id/downCard"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    android:src="@drawable/ic_down"
-                    android:onClick="voteDown"/>
+                    <ImageButton
+                        android:id="@+id/downCard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/ic_down"
+                        android:onClick="voteDown"/>
+                </LinearLayout>
+
 
             </LinearLayout>
 
