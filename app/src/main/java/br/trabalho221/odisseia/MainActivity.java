@@ -23,32 +23,20 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    DatabaseHelper myDb;
-    EditText edit_Materia;
-    EditText edit_Professor;
-    EditText edit_Status;
-    EditText edit_Ponto;
-    EditText edit_Util;
-    EditText edit_Facil;
-    EditText edit_Recom;
-    EditText edit_Coment;
-    Button addbutton;
 
-//codigo gabriel inicio
+    private DatabaseHelper myDb;
+
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
     private List<ListSubject> listSubjects;
-//cod gabriel final
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        myDb = new DatabaseHelper(this);
 
         //edit_Materia = (EditText)findViewById(R.id.editMateria);
         /*

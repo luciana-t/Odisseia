@@ -1,14 +1,16 @@
 package br.trabalho221.odisseia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class pagComentDisciplinas extends AppCompatActivity {
+public class PagComentDisciplinas extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -38,5 +40,9 @@ public class pagComentDisciplinas extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
+    }
+    public void mudaTela(View view){
+        Intent it = new Intent(this, AvaliarDisciplina.class);
+        startActivity(it);
     }
 }
