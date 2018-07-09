@@ -27,6 +27,7 @@ public class AvaliarDisciplina extends AppCompatActivity {
             public void onClick(View v) {
                 Avaliacao avaliacao = new Avaliacao();
 
+                avaliacao.id_disciplina = Integer.parseInt(getIntent().getStringExtra("IdMateria"));
                 avaliacao.id_usuario = Placeholders.ID_USUARIO_LOGADO;
 
                 if (((RadioButton) findViewById(R.id.radio1)).isChecked())
@@ -43,9 +44,9 @@ public class AvaliarDisciplina extends AppCompatActivity {
                 avaliacao.facilidade = ((ToggleButton) findViewById(R.id.btFacil)).isChecked();
                 avaliacao.utilidade = ((ToggleButton) findViewById(R.id.btUtil)).isChecked();
                 avaliacao.recomenda = ((ToggleButton) findViewById(R.id.btRecomendavel)).isChecked();
-                avaliacao.comentario = ((EditText) findViewById(R.id.txtComent)).toString();
+                avaliacao.comentario = ((EditText) findViewById(R.id.txtComent)).getText().toString();
                 avaliacao.anonima = ((RadioButton) findViewById(R.id.radioAnonimo)).isChecked();
-                avaliacao.professor = ((EditText) findViewById(R.id.txtProf)).toString();
+                avaliacao.professor = ((EditText) findViewById(R.id.txtProf)).getText().toString();
                 avaliacao.visivel = true;
                 avaliacao.validade = 0;
 

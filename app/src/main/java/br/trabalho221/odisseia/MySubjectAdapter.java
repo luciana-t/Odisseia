@@ -37,8 +37,8 @@ public class MySubjectAdapter extends RecyclerView.Adapter<MySubjectAdapter.View
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        ListSubject listSubject = listSubjects.get(position);
-        if(position%2!=0){
+        final ListSubject listSubject = listSubjects.get(position);
+        if(position % 2 != 0){
             holder.card.setBackgroundResource(R.color.cinzaClaro);
         }
 
@@ -48,6 +48,7 @@ public class MySubjectAdapter extends RecyclerView.Adapter<MySubjectAdapter.View
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(holder.itemView.getContext(), PagComentDisciplinas.class);
+                it.putExtra("IdMateria", String.valueOf(listSubject.getId()));
                 it.putExtra("Materia",  ((TextView) view.findViewById(R.id.infoMateriaCard)).getText().toString());
                 it.putExtra("Nota",  ((TextView) view.findViewById(R.id.notaCard)).getText().toString());
                 holder.itemView.getContext().startActivity(it);

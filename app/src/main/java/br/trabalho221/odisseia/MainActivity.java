@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 /*
         Usuario usuario = new Usuario();
         usuario.nome = "Xablau";
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity
 
         for (Disciplina it : disciplinas) {
             ListSubject listSubject = new ListSubject(
+                    it.id,
                     it.nome,
                     String.valueOf(it.estrelas)
             );

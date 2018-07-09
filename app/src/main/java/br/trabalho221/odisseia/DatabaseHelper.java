@@ -239,7 +239,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor cursor = db.query("Disciplina", new String[]{"*"}, null, null, null, null, null);
+        Cursor cursor = db.query("Avaliacao", new String[]{"*"}, null, null, null, null, null);
 
         try {
             int id_index = cursor.getColumnIndexOrThrow("id");

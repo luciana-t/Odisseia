@@ -31,19 +31,42 @@ public class PagComentDisciplinas extends AppCompatActivity {
         List<Avaliacao> avaliacoes = DatabaseHelper.getInstance(PagComentDisciplinas.this).getAvaliacoes();
 /*
         for (Avaliacao it : avaliacoes) {
-            ListItem listItem = new ListItem(
-            );
+            int a = it.id_disciplina;
+            int b = Integer.parseInt(getIntent().getStringExtra("IdMateria"));
+
+            if (a == b) {
+                ListItem listItem = new ListItem(
+                        getIntent().getStringExtra("Materia"),
+                        it.comentario
+                );
+                listItems.add(listItem);
+            }
         }
-  */
-        /*
-        for(int i=0;i<=10;i++){
-            ListItem listItem = new ListItem(
-                    "Mat " + (i+1),
-                    "comentario generico"
-            );
-            listItems.add(listItem);
-        }
-        */
+*/
+        listItems.add(new ListItem(
+                "INF110",
+                "Muito louco"
+        ));
+        listItems.add(new ListItem(
+                "INF110",
+                "Tomei pau"
+        ));
+        listItems.add(new ListItem(
+                "INF110",
+                "Tive pesadelos com Android e nem era a disciplina"
+        ));
+        listItems.add(new ListItem(
+                "INF110",
+                "Fiquei triste"
+        ));
+        listItems.add(new ListItem(
+                "INF110",
+                "Xablau"
+        ));
+        listItems.add(new ListItem(
+                "INF110",
+                "..."
+        ));
 
         adapter = new MyAdapter(listItems, this);
 
@@ -52,6 +75,7 @@ public class PagComentDisciplinas extends AppCompatActivity {
 
     public void mudaTela(View view){
         Intent it = new Intent(this, AvaliarDisciplina.class);
+        it.putExtra("IdMateria", getIntent().getStringExtra("IdMateria"));
         startActivity(it);
     }
 }
