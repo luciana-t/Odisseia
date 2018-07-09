@@ -7,7 +7,6 @@ package br.trabalho221.odisseia;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -48,7 +47,7 @@ public class MySubjectAdapter extends RecyclerView.Adapter<MySubjectAdapter.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(holder.itemView.getContext(), pagComentDisciplinas.class);
+                Intent it = new Intent(holder.itemView.getContext(), PagComentDisciplinas.class);
                 it.putExtra("Materia",  ((TextView) view.findViewById(R.id.infoMateriaCard)).getText().toString());
                 it.putExtra("Nota",  ((TextView) view.findViewById(R.id.notaCard)).getText().toString());
                 holder.itemView.getContext().startActivity(it);

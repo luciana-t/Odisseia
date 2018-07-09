@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".AvaliarDisciplina" />
         <activity android:name=".Splash"></activity>
-        <activity android:name=".pagComentDisciplinas"></activity>
+        <activity android:name=".PagComentDisciplinas"></activity>
     </application>
 
 </manifest>

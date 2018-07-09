@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +42,7 @@ public class PagComentDisciplinas extends AppCompatActivity {
 
     }
     public void mudaTela(View view){
-        Intent it = new Intent(this, avaliarDisciplina.class);
+        Intent it = new Intent(this, AvaliarDisciplina.class);
         startActivity(it);
     }
 }
