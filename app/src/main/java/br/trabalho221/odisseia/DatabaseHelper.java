@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v4.content.res.ResourcesCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper instance;
 
@@ -80,7 +83,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean deleteUsuario(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("Usuario", "id=?", new String[] { String.valueOf(id) }) > 0;
+        db.rawQuery("DELETE FROM Usuario WHERE id = " + String.valueOf(id), null);
+        return true;
     }
 
     public long saveDisciplina(Disciplina disciplina) {
@@ -128,9 +132,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return disciplina;
     }
 
+    public List<Disciplina> getDisciplinas() {
+        List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.query("Disciplina", new String[]{"*"}, null, null, null, null, null);
+
+        try {
+            int id_index = cursor.getColumnIndexOrThrow("id");
+            int cod_disciplina_index = cursor.getColumnIndexOrThrow("cod_disciplina");
+            int nome_index = cursor.getColumnIndexOrThrow("nome");
+            int facilidade_index = cursor.getColumnIndexOrThrow("facilidade");
+            int utilidade_index = cursor.getColumnIndexOrThrow("utilidade");
+            int recomendacao_index = cursor.getColumnIndexOrThrow("recomendacao");
+            int estrelas_index = cursor.getColumnIndexOrThrow("estrelas");
+
+            while (cursor.moveToNext()) {
+                Disciplina disciplina = new Disciplina();
+                disciplina.id = (int) cursor.getLong(id_index);
+                disciplina.nome = cursor.getString(cod_disciplina_index);
+                disciplina.facilidade = cursor.getInt(facilidade_index);
+                disciplina.utilidade = cursor.getInt(utilidade_index);
+                disciplina.recomendacao = cursor.getInt(recomendacao_index);
+                disciplina.estrelas = cursor.getInt(estrelas_index);
+                disciplinas.add(disciplina);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return disciplinas;
+    }
+
     public boolean deleteDisciplina(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("Disciplina", "id=?", new String[]{ String.valueOf(id) }) > 0;
+        db.rawQuery("DELETE FROM Disciplina WHERE id = " + String.valueOf(id), null);
+        return true;
     }
 
     public long saveAvaliacao(Avaliacao avaliacao) {
@@ -195,9 +234,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return avaliacao;
     }
 
+    public List<Avaliacao> getAvaliacoes() {
+        List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.query("Disciplina", new String[]{"*"}, null, null, null, null, null);
+
+        try {
+            int id_index = cursor.getColumnIndexOrThrow("id");
+            int id_usuario_index = cursor.getColumnIndexOrThrow("id_usuario");
+            int id_disciplina_index = cursor.getColumnIndexOrThrow("id_disciplina");
+            int nome_index = cursor.getColumnIndexOrThrow("id_disciplina");
+            int estrelas_index = cursor.getColumnIndexOrThrow("estrelas");
+            int facilidade_index = cursor.getColumnIndexOrThrow("facilidade");
+            int utilidade_index = cursor.getColumnIndexOrThrow("utilidade");
+            int recomenda_index = cursor.getColumnIndexOrThrow("recomenda");
+            int comentario_index = cursor.getColumnIndexOrThrow("comentario");
+            int anonima_index = cursor.getColumnIndexOrThrow("anonima");
+            int professor_index = cursor.getColumnIndexOrThrow("professor");
+            int visivel_index = cursor.getColumnIndexOrThrow("visivel");
+            int validade_index = cursor.getColumnIndexOrThrow("validade");
+
+            while (cursor.moveToNext()) {
+                Avaliacao avaliacao = new Avaliacao();
+                avaliacao.id = (int)cursor.getLong(id_index);
+                avaliacao.id_usuario = (int)cursor.getLong(id_usuario_index);
+                avaliacao.id_disciplina = (int)cursor.getLong(facilidade_index);
+                avaliacao.estrelas = cursor.getInt(utilidade_index);
+                avaliacao.facilidade = cursor.getInt(facilidade_index) == 1 ? true : false;
+                avaliacao.utilidade = cursor.getInt(utilidade_index) == 1 ? true : false;
+                avaliacao.recomenda = cursor.getInt(recomenda_index) == 1 ? true : false;
+                avaliacao.comentario = cursor.getString(comentario_index);
+                avaliacao.anonima = cursor.getInt(anonima_index) == 1 ? true : false;
+                avaliacao.professor = cursor.getString(professor_index);
+                avaliacao.visivel = cursor.getInt(visivel_index) == 1 ? true : false;
+                avaliacao.validade = cursor.getInt(validade_index);
+                avaliacoes.add(avaliacao);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return avaliacoes;
+    }
+
     public boolean deleteAvaliacao(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("Avaliacao", "id=?", new String[] { String.valueOf(id) }) > 0;
+        db.rawQuery("DELETE FROM Avaliacao WHERE id = " + String.valueOf(id), null);
+        return true;
     }
 
     public long saveReacao(Reacao reacao) {
@@ -242,6 +328,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean deleteReacao(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("Reacao", "id=?", new String[]{ String.valueOf(id) }) > 0;
+        db.rawQuery("DELETE FROM Reacao WHERE id = " + String.valueOf(id), null);
+        return true;
     }
 }

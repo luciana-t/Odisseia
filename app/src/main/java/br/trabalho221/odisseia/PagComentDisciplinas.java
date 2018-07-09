@@ -21,13 +21,21 @@ public class PagComentDisciplinas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pag_coment_disciplinas);
-
+        setTitle(getIntent().getStringExtra("Materia"));
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listItems = new ArrayList<>();
 
+        List<Avaliacao> avaliacoes = DatabaseHelper.getInstance(PagComentDisciplinas.this).getAvaliacoes();
+/*
+        for (Avaliacao it : avaliacoes) {
+            ListItem listItem = new ListItem(
+            );
+        }
+  */
+        /*
         for(int i=0;i<=10;i++){
             ListItem listItem = new ListItem(
                     "Mat " + (i+1),
@@ -35,12 +43,13 @@ public class PagComentDisciplinas extends AppCompatActivity {
             );
             listItems.add(listItem);
         }
+        */
 
         adapter = new MyAdapter(listItems, this);
 
         recyclerView.setAdapter(adapter);
-
     }
+
     public void mudaTela(View view){
         Intent it = new Intent(this, AvaliarDisciplina.class);
         startActivity(it);
